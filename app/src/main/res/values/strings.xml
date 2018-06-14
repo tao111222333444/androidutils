@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android Utils</string>
+
+    <string name="mobile_app_text_1">全部应用</string>
+    <string name="mobile_app_text_2">系统应用</string>
+    <string name="mobile_app_text_3">非系统应用</string>
+</resources>
