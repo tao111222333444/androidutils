@@ -3,11 +3,9 @@ package com.hangzhou.androidutils.adapter;
 import android.content.Context;
 
 import com.hangzhou.androidutils.R;
-import com.hangzhou.androidutils.base.BaseListAdatper;
+import com.hangzhou.androidutils.base.BaseListAdapter;
 import com.hangzhou.androidutils.base.BaseListViewHolder;
 import com.hangzhou.androidutils.utils.AppInfoUtils;
-
-import java.util.List;
 
 /**
  * @author 作者：hugo
@@ -15,9 +13,9 @@ import java.util.List;
  * 版本：v1.0
  * 描述：
  */
-public class MobileAppAdatper extends BaseListAdatper<AppInfoUtils.Application> {
+public class MobileAppAdapter extends BaseListAdapter<AppInfoUtils.Application> {
 
-    public MobileAppAdatper(Context context) {
+    public MobileAppAdapter(Context context) {
         super(context,  R.layout.item_mobile_app_fragment);
     }
 

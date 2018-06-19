@@ -13,20 +13,20 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseListAdatper<T> extends BaseAdapter {
+public abstract class BaseListAdapter<T> extends BaseAdapter {
     protected Context mContext;
     protected List<T> mDatas = new ArrayList<T>();
     protected LayoutInflater mInflater;
     private int mLayoutId;
     protected  int mPosotion;
-    public BaseListAdatper(Context context, int layoutId) {
+    public BaseListAdapter(Context context, int layoutId) {
         this.mContext = context;
 
         mInflater = LayoutInflater.from(context);
         this.mLayoutId = layoutId;
     }
 
-    public BaseListAdatper(Context context, List<T> mDatas, int layoutId) {
+    public BaseListAdapter(Context context, List<T> mDatas, int layoutId) {
         this.mContext = context;
         this.mDatas = mDatas;
         mInflater = LayoutInflater.from(context);

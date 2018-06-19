@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.hangzhou.androidutils.R;
-import com.hangzhou.androidutils.adapter.MobileAppAdatper;
+import com.hangzhou.androidutils.adapter.MobileAppAdapter;
 import com.hangzhou.androidutils.utils.AppInfoUtils;
 
 import java.util.List;
@@ -36,7 +36,7 @@ public class MobileAppFragment extends Fragment {
     private int type = 1;
 
     private ListView listview;
-    private  MobileAppAdatper mAdatper;
+    private MobileAppAdapter mAdapter;
 
 
     @Nullable
@@ -53,8 +53,8 @@ public class MobileAppFragment extends Fragment {
             type = getArguments().getInt(INPUT_TYPE_KEY,1);
         }
         listview = view.findViewById(R.id.listview);
-        mAdatper = new MobileAppAdatper(getContext());
-        listview.setAdapter(mAdatper);
+        mAdapter = new MobileAppAdapter(getContext());
+        listview.setAdapter(mAdapter);
         List<AppInfoUtils.Application> list;
         switch (type){
             case TYPE_1:
@@ -69,7 +69,7 @@ public class MobileAppFragment extends Fragment {
             default:
                 list = AppInfoUtils.getAllApplication(getContext());
         }
-        mAdatper.setDatas(list);
+        mAdapter.setDatas(list);
 
     }
 }
