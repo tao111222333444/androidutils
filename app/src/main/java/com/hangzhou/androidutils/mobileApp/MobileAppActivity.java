@@ -51,9 +51,10 @@ public class MobileAppActivity extends BaseActivity {
     private void initializeView() {
         mViewpager = findViewById(R.id.mViewpager);
         mFragments = new ArrayList<>();
-        mFragments.add( new MobileAppFragment().setType(MobileAppFragment.TYPE_1));
-        mFragments.add(new MobileAppFragment().setType(MobileAppFragment.TYPE_2));
-        mFragments.add(new MobileAppFragment().setType(MobileAppFragment.TYPE_3));
+
+        mFragments.add(getMobileAppFragment(MobileAppFragment.TYPE_1));
+        mFragments.add(getMobileAppFragment(MobileAppFragment.TYPE_2));
+        mFragments.add(getMobileAppFragment(MobileAppFragment.TYPE_3));
         FragmentPagerAdapter mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
 
             @Override
@@ -79,7 +80,16 @@ public class MobileAppActivity extends BaseActivity {
         findViewById(R.id.btn_NotSystemApp).setOnClickListener(new textListener(TYPE_3));
     }
 
-
+    /**
+     * 创建一个fragment并返回
+     * */
+    private MobileAppFragment getMobileAppFragment(int type){
+        MobileAppFragment fragment = new MobileAppFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(MobileAppFragment.INPUT_TYPE_KEY,type);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
 
     private void setTab(int i){
         switch (i){

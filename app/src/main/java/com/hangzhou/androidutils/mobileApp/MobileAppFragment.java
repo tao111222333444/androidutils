@@ -23,6 +23,8 @@ import java.util.List;
  * 描述：
  */
 public class MobileAppFragment extends Fragment {
+    /**传入值的key*/
+    public static final String INPUT_TYPE_KEY = "input_type_key";
     /**全部应用*/
     public static final int TYPE_1 = 1;
     /**系统应用*/
@@ -36,10 +38,6 @@ public class MobileAppFragment extends Fragment {
     private ListView listview;
     private  MobileAppAdatper mAdatper;
 
-    public MobileAppFragment setType(int type) {
-        this.type = type;
-        return this;
-    }
 
     @Nullable
     @Override
@@ -51,6 +49,9 @@ public class MobileAppFragment extends Fragment {
 
 
     private void initialize(View view) {
+        if (getArguments() != null) {
+            type = getArguments().getInt(INPUT_TYPE_KEY,1);
+        }
         listview = view.findViewById(R.id.listview);
         mAdatper = new MobileAppAdatper(getContext());
         listview.setAdapter(mAdatper);
