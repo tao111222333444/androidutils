@@ -8,6 +8,7 @@ import com.hangzhou.androidutils.mobileApp.MobileAppActivity;
 import com.hangzhou.androidutils.utils.AppInfoUtils;
 import com.hangzhou.androidutils.utils.AutoAdaptionScreenUtil;
 import com.hangzhou.androidutils.utils.LogUtil;
+import com.hangzhou.androidutils.utils.ToastUtil;
 import com.hangzhou.androidutils.utils.Utils;
 
 import java.util.List;
@@ -31,7 +32,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         switch (v.getId()){
             case R.id.btn_screen:
                 //屏幕尺寸
-                ScreenInfoActivity.show(this);
+//                ScreenInfoActivity.show(this);
+                ToastUtil.showToast("hahahahhahahahhahahaha");
                 break;
             case R.id.btn_open_market:
                 //打开应用市场到qq详情页面
