@@ -16,7 +16,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ToastUtil.setMainHander(new Handler(getMainLooper()),this);
+        ToastUtil.initToast(new Handler(getMainLooper()),this);
     }
 
     /**

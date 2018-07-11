@@ -22,7 +22,7 @@ public class ToastUtil {
      * 设置Application下的Handler
      * @param mainHander
      */
-    public static void setMainHander(Handler mainHander, Application application){
+    public static void initToast(Handler mainHander, Application application){
         ToastUtil.mainHandler = mainHander;
         ToastUtil.application = application;
     }
