@@ -13,12 +13,20 @@ import com.hangzhou.androidutils.utils.ToastUtil;
  */
 public class App extends Application {
 
+    private static App mBaseApplication ;
     @Override
     public void onCreate() {
         super.onCreate();
         ToastUtil.initToast(new Handler(getMainLooper()),this);
     }
 
+    /**
+     * 获取Application
+     * @return
+     */
+    public synchronized static App getInstance(){
+        return mBaseApplication;
+    }
     /**
      * 程序终止的时候执行
      */
